@@ -1,6 +1,7 @@
 # UpConta Mx — Carpeta raíz de trabajo
 
-Repositorio de **contexto compartido** del ecosistema UpConta Mx. Se clona como la carpeta
+Repositorio de **contexto compartido** del ecosistema UpConta Mx
+(`github.com/Henrry6/upcontamx.workspace`). Se clona como la carpeta
 raíz y, dentro de ella, cada proyecto como carpeta hermana. Contiene:
 
 | Archivo / carpeta | Para qué sirve |
@@ -15,7 +16,7 @@ raíz y, dentro de ella, cada proyecto como carpeta hermana. Contiene:
 ## 1. Preparar la carpeta (una sola vez)
 
 ```bash
-git clone git@github.com:tocsystems/<este-repositorio>.git upconta-mx   # el nombre es libre
+git clone git@github.com:Henrry6/upcontamx.workspace.git upconta-mx   # el nombre de la carpeta es libre
 cd upconta-mx
 git clone git@github.com:tocsystems/upcontamx.api.git api
 git clone git@github.com:tocsystems/upcontamx.app.git app
@@ -28,12 +29,21 @@ Los proyectos son repositorios independientes; el `.gitignore` de la raíz los e
 
 ## 2. Instalar los skills (una sola vez)
 
-Desde la carpeta raíz:
+**Opción A — desde GitHub** (no necesitas haber clonado este repositorio):
+
+```bash
+claude plugin marketplace add Henrry6/upcontamx.workspace
+claude plugin install upconta@upcontamx --scope user
+```
+
+**Opción B — desde la carpeta raíz clonada** (útil para probar cambios locales de los skills):
 
 ```bash
 claude plugin marketplace add ./
 claude plugin install upconta@upcontamx --scope user
 ```
+
+Ambas registran el mismo marketplace (`upcontamx`); usa solo una.
 
 Con `--scope user` el plugin queda disponible en **todos** los proyectos y también en la
 extensión de Claude Code para VS Code. Reinicia Claude después de instalar.
@@ -135,11 +145,11 @@ Solo afecta a los commits que crea Claude; los que haces tú en la terminal no p
 ## 7. Actualizar los skills
 
 ```bash
-git pull                                       # en la carpeta raíz
-claude plugin marketplace update upcontamx
+claude plugin marketplace update upcontamx     # opción A: descarga lo último de GitHub
 ```
 
-Después, reinicia Claude.
+Si instalaste con la opción B, primero haz `git pull` en la carpeta raíz y luego el mismo
+comando. Después, reinicia Claude.
 
 ## 8. Agregar o modificar un skill
 
