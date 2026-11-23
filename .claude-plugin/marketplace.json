@@ -1,0 +1,14 @@
+{
+  "name": "upcontamx",
+  "owner": {
+    "name": "TOC Systems"
+  },
+  "description": "Plugins compartidos del equipo de UpConta Mx",
+  "plugins": [
+    {
+      "name": "upconta",
+      "source": "./plugins/upconta",
+      "description": "Skills compartidos de UpConta Mx: revisión de código y commits"
+    }
+  ]
+}

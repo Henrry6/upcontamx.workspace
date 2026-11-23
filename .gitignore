@@ -1,0 +1,11 @@
+# Repositorio de contexto compartido: solo versiona los archivos de la raíz.
+# Los proyectos (api, app, admin, utils, pdf-generator, bot-scrapping…) son
+# repositorios independientes clonados aquí como carpetas hermanas.
+/*
+!/.gitignore
+!/Project.md
+!/AGENTS.md
+!/CLAUDE.md
+!/README.md
+!/.claude-plugin/
+!/plugins/
